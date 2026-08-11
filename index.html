@@ -148,7 +148,14 @@
             text-align: center;
             color: var(--text-muted);
             margin-top: 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
+        footer a { color: var(--accent-primary); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
 
         /* Animations */
         @keyframes fadeUp {
@@ -168,6 +175,7 @@
             .project-card { padding: 1.5rem; }
             .section-title { font-size: 2rem; }
             .badge { position: relative; top: 0; right: 0; display: inline-block; margin-bottom: 1rem; }
+            footer { flex-direction: column; text-align: center; gap: 1.5rem; }
         }
     </style>
     <!-- Google Fonts -->
@@ -222,6 +230,11 @@
 
         <footer>
             <p>&copy; 2026 DS3 Studio. All rights reserved. Built for the World from India <span style="color: #ef4444;">&hearts;</span></p>
+            <p>
+                <a href="/">Studio Home</a> &nbsp;&nbsp;|&nbsp;&nbsp; 
+                <a href="tvremote/privacy-policy.html">Privacy Policy</a> &nbsp;&nbsp;|&nbsp;&nbsp; 
+                <a href="tvremote/terms-of-use.html">Terms of Use</a>
+            </p>
         </footer>
     </div>
 </body>
