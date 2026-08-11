@@ -44,7 +44,9 @@
             justify-content: space-between;
             align-items: center;
         }
-        .logo { font-size: 1.5rem; font-weight: 800; background: linear-gradient(to right, #00F2FE, #4FACFE); -webkit-background-clip: text; color: transparent; text-decoration: none; }
+        .logo { font-size: 1.5rem; font-weight: 800; text-decoration: none; display: flex; align-items: center; letter-spacing: -0.05em; }
+        .logo .ds { color: #F8FAFC; }
+        .logo .three { color: #00F2FE; }
 
         /* Hero */
         .hero {
@@ -146,7 +148,7 @@
 <body>
     <div class="container">
         <header>
-            <a href="/" class="logo">DS3 Studio</a>
+            <a href="/" class="logo"><span class="ds">DS</span><span class="three">3</span></a>
             <nav>
                 <a href="mailto:dhamodaran@outlook.in" style="color: white; text-decoration: none; font-weight: 600;">Contact Us</a>
             </nav>
