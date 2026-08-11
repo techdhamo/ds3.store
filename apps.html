@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DS3 Studio | Next-Gen Software Ecosystems</title>
+    <title>Our Apps | DS3 Studio</title>
     <style>
         :root {
             --bg-color: #0A0A14;
             --text-main: #F8FAFC;
             --text-muted: #94A3B8;
+            --accent-primary: #00F2FE;
             --accent-glow: rgba(0, 242, 254, 0.4);
             --card-bg: rgba(255, 255, 255, 0.03);
             --border-color: rgba(255, 255, 255, 0.08);
@@ -32,10 +33,8 @@
             background-attachment: fixed;
         }
 
-        /* Typography */
         h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; }
         
-        /* Layout */
         .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
         
         /* Header */
@@ -45,15 +44,15 @@
             justify-content: space-between;
             align-items: center;
         }
-        .logo { font-size: 1.5rem; font-weight: 800; background: linear-gradient(to right, #00F2FE, #4FACFE); -webkit-background-clip: text; color: transparent; }
+        .logo { font-size: 1.5rem; font-weight: 800; background: linear-gradient(to right, #00F2FE, #4FACFE); -webkit-background-clip: text; color: transparent; text-decoration: none; }
 
         /* Hero */
         .hero {
-            padding: 8rem 0 6rem;
+            padding: 6rem 0 4rem;
             text-align: center;
         }
         .hero h1 {
-            font-size: 4.5rem;
+            font-size: 3.5rem;
             margin-bottom: 1.5rem;
             line-height: 1.1;
         }
@@ -64,46 +63,8 @@
             margin: 0 auto 3rem;
         }
 
-        /* Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 6rem;
-        }
-
-        /* Glassmorphism Cards */
-        .card {
-            background: var(--card-bg);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 2.5rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px var(--accent-glow);
-            border-color: rgba(255,255,255,0.2);
-        }
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 4px;
-            background: linear-gradient(90deg, #00F2FE, #4FACFE);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .card:hover::before { opacity: 1; }
-        .card h3 { font-size: 1.5rem; margin-bottom: 1rem; }
-        .card p { color: var(--text-muted); font-size: 1rem; }
-        
         /* Portfolio Section */
-        .portfolio-section { padding: 4rem 0; }
-        .section-title { font-size: 2.5rem; margin-bottom: 3rem; text-align: center; }
+        .portfolio-section { padding: 2rem 0 4rem; }
         
         .project-card {
             display: flex;
@@ -115,6 +76,11 @@
             margin-bottom: 3rem;
             position: relative;
             overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 242, 254, 0.3);
         }
         .badge {
             position: absolute;
@@ -138,6 +104,7 @@
             border-radius: 9999px;
             margin-top: 2rem;
             transition: background 0.2s, transform 0.2s;
+            align-self: flex-start;
         }
         .btn:hover { background: #e2e8f0; transform: scale(1.05); }
 
@@ -165,76 +132,51 @@
         .animate-up { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
         .delay-1 { animation-delay: 0.1s; }
         .delay-2 { animation-delay: 0.2s; }
-        .delay-3 { animation-delay: 0.3s; }
         
         @media (max-width: 768px) {
-            .hero { padding: 4rem 0 3rem; }
+            .hero { padding: 4rem 0 2rem; }
             .hero h1 { font-size: 2.5rem; }
-            .hero p { font-size: 1rem; }
-            .grid { grid-template-columns: 1fr; gap: 1.5rem; }
             .project-card { padding: 1.5rem; }
-            .section-title { font-size: 2rem; }
             .badge { position: relative; top: 0; right: 0; display: inline-block; margin-bottom: 1rem; }
             footer { flex-direction: column; text-align: center; gap: 1.5rem; }
         }
     </style>
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <header>
-            <div class="logo">DS3 Studio</div>
+            <a href="/" class="logo">DS3 Studio</a>
             <nav>
                 <a href="mailto:dhamodaran@outlook.in" style="color: white; text-decoration: none; font-weight: 600;">Contact Us</a>
             </nav>
         </header>
 
         <section class="hero">
-            <h1 class="animate-up">Empowering the World<br>Through Intuitive Software.</h1>
-            <p class="animate-up delay-1">DS3 Studio creates privacy-first, accessible digital experiences that bridge the gap between complex technology and everyday human needs.</p>
-        </section>
-
-        <section>
-            <div class="grid">
-                <div class="card animate-up delay-1">
-                    <h3>Absolute Privacy</h3>
-                    <p>Your data belongs to you. We build software that processes data locally on your device whenever possible, minimizing data collection and respecting your digital footprint.</p>
-                </div>
-                <div class="card animate-up delay-2">
-                    <h3>Radical Simplicity</h3>
-                    <p>We believe technology should be invisible. Our tools are designed with a frictionless philosophy that requires zero learning curve, empowering users instantly.</p>
-                </div>
-                <div class="card animate-up delay-3">
-                    <h3>Request an App</h3>
-                    <p>Have an idea that could help the world? We are always looking for real problems to solve. Submit a request and let's build the future together.</p>
-                    <a href="mailto:dhamodaran@outlook.in?subject=App%20Idea%20Request" style="color: #00F2FE; text-decoration: none; margin-top: 1rem; display: inline-block; font-weight: 600;">Submit Idea &rarr;</a>
-                </div>
-            </div>
+            <h1 class="animate-up">App Gallery</h1>
+            <p class="animate-up delay-1">Explore the portfolio of privacy-first, zero-maintenance digital tools crafted by DS3 Studio.</p>
         </section>
 
         <section class="portfolio-section">
-            <h2 class="section-title">Current Projects</h2>
-            
             <div class="project-card animate-up delay-2">
-                <div class="badge">Early Access Active</div>
+                <div class="badge">Beta Testing Soon</div>
                 <h3 class="project-title">TvRemote</h3>
                 <p style="color: var(--text-muted); max-width: 600px; font-size: 1.125rem;">
-                    The ultimate smart remote for Google TV. Built with modern Android architecture, Jetpack Compose, and ultra-fast local network discovery.
+                    The ultimate smart remote for Google TV. Built with modern Android architecture, Jetpack Compose, and ultra-fast local network discovery. Absolute privacy guaranteed.
                 </p>
-                <div>
-                    <a href="/tvremote/" class="btn">View Project</a>
-                </div>
+                <a href="/tvremote/" class="btn">View App Details</a>
             </div>
+            
+            <!-- Future apps can be added here -->
+            
         </section>
 
         <footer>
             <p>&copy; 2026 DS3 Studio. All rights reserved. Built for the World from India <span style="color: #ef4444;">&hearts;</span></p>
             <p>
-                <a href="#">Top</a> &nbsp;&nbsp;|&nbsp;&nbsp; 
-                <a href="/apps.html">Our Apps</a> &nbsp;&nbsp;|&nbsp;&nbsp; 
-                <a href="tvremote/privacy-policy.html">Privacy Policy</a> &nbsp;&nbsp;|&nbsp;&nbsp; 
-                <a href="tvremote/terms-of-use.html">Terms of Use</a>
+                <a href="/">Home</a> &nbsp;&nbsp;|&nbsp;&nbsp; 
+                <a href="/tvremote/privacy-policy.html">Privacy Policy</a> &nbsp;&nbsp;|&nbsp;&nbsp; 
+                <a href="/tvremote/terms-of-use.html">Terms of Use</a>
             </p>
         </footer>
     </div>
