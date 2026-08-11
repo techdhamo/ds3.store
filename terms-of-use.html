@@ -107,7 +107,7 @@
             <h1>Terms of Use</h1>
             <span class="date">Last updated: August 11, 2026</span>
             
-            <p>Welcome to the software products and applications developed and published by DS3 Studio. By downloading, accessing, or using any of our applications (including TvRemote), you agree to be bound by these Terms of Use.</p>
+            <p>Welcome to the software products and applications developed and published by DS3 Studio. By downloading, accessing, or using any of our applications<span class="dynamic-app-name"></span>, you agree to be bound by these Terms of Use.</p>
 
             <h2>1. Intellectual Property & Copyright</h2>
             <p>All software, designs, graphics, icons, source code, and assets within our applications are the exclusive intellectual property of DS3 Studio. <strong>It is strictly illegal to copy, clone, distribute, reverse-engineer, decompile, or modify any part of our software products.</strong></p>
@@ -145,5 +145,18 @@
             </p>
         </footer>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const appId = params.get('app-id');
+            if (appId) {
+                // Basic sanitization to prevent XSS
+                const safeAppId = appId.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                document.querySelectorAll('.dynamic-app-name').forEach(span => {
+                    span.innerHTML = ` (including ${safeAppId})`;
+                });
+            }
+        });
+    </script>
 </body>
 </html>
